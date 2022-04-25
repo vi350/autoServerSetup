@@ -22,6 +22,9 @@ cd /home || exit
 mkdir admin
 useradd -s /bin/bash admin
 chown admin:admin /home/admin
+sudo groupadd docker
+sudo usermod -aG docker admin
+sudo systemctl restart docker
 passwd admin
 #TODO: auto deny password login in favor of keys
 #TODO: delete docker prerouting from iptables + ufw
