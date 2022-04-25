@@ -15,11 +15,13 @@ apt-get update
 apt-get install docker-ce docker-ce-cli containerd.io
 wget https://go.dev/dl/go1.18.1.linux-amd64.tar.gz
 rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz
+rm /root/go1.18.1.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.profile
-cd /home
+cd /home || exit
 mkdir admin
 useradd -s /bin/bash admin
+chown admin:admin /home/admin
 passwd admin
 #TODO: auto deny password login in favor of keys
 #TODO: delete docker prerouting from iptables + ufw
