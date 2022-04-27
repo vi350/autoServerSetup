@@ -18,7 +18,10 @@ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz
 rm /root/go1.18.1.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.profile
-cd /home || exit
+sudo apt install nginx
+sudo systemctl enable nginx
+#TODO: wget nginx conf own template
+cd /home || mkdir /home
 mkdir admin
 useradd -s /bin/bash admin
 chown admin:admin /home/admin
