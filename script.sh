@@ -23,6 +23,7 @@ sudo systemctl enable nginx
 #TODO: wget nginx conf own template
 cd /home || mkdir /home
 mkdir admin
+cp .bashrc /home/admin/.bashrc
 useradd -s /bin/bash admin
 chown admin:admin /home/admin
 sudo groupadd docker
