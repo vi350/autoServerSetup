@@ -18,17 +18,22 @@ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz
 rm /root/go1.18.1.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.bashrc
-sudo apt install nginx
-sudo systemctl enable nginx
+apt install nginx
+systemctl enable nginx
+mkdir ~/crts
+cd ~
+wget https://raw.githubusercontent.com/vi350/autoSetupGoDockerNginx/master/nginx.conf
+mv nginx.conf /etc/nginx/nginx.conf
+systemctl reload nginx
 #TODO: wget nginx conf own template
 cd /home || mkdir /home
 mkdir admin
-cp .bashrc /home/admin/.bashrc
+cp ~/.bashrc /home/admin/.bashrc
 useradd -s /bin/bash admin
 chown admin:admin /home/admin
-sudo groupadd docker
-sudo usermod -aG docker admin
-sudo systemctl restart docker
+groupadd docker
+usermod -aG docker admin
+systemctl restart docker
 passwd admin
 #TODO: auto deny password login in favor of keys
 #TODO: delete docker prerouting from iptables + ufw
