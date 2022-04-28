@@ -32,7 +32,7 @@ cp ~/.bashrc /home/admin/.bashrc
 useradd -s /bin/bash admin
 chown admin:admin /home/admin
 chown admin:admin /home/admin/.bashrc
-echo "[ -e ~/.bashrc ] && source ~/.bashrc" >> ~/.bashrc
+echo "[ -e ~/.bashrc ] && source ~/.bashrc" >> /etc/profile
 groupadd docker
 usermod -aG docker admin
 systemctl restart docker
