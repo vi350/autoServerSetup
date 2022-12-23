@@ -29,6 +29,7 @@ systemctl reload nginx
 cd /home || mkdir /home
 mkdir admin
 cp ~/.bashrc /home/admin/.bashrc
+groupadd admin
 useradd -g admin -s /bin/bash admin
 chown admin:admin /home/admin
 chown admin:admin /home/admin/.bashrc
