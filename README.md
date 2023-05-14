@@ -1,2 +1,2 @@
-# autoSetupGoDockerNginx
-shell script that is made to automate go, docker and nginx installation onto ubuntu 20.04 servers
+# autoServerSetup
+shell script that is made to automate go and docker installation onto ubuntu 20.04 servers
