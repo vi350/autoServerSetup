@@ -14,9 +14,9 @@ echo \
     $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 apt-get update
 apt-get install docker-ce docker-ce-cli containerd.io
-wget https://go.dev/dl/go1.20.4.linux-amd64.tar.gz
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz
-rm /root/go1.20.4.linux-amd64.tar.gz
+wget https://go.dev/dl/go1.21.3.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.21.3.linux-amd64.tar.gz
+rm /root/go1.21.3.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.bashrc
 cd /home || mkdir /home
