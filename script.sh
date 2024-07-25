@@ -7,7 +7,6 @@ apt install tmux
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 
-
 echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ stable main" | sudo tee /etc/apt/sources.list.d/azlux.list
 sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg
 apt update
@@ -28,6 +27,7 @@ chown admin:admin /home/admin
 chown admin:admin /home/admin/.bashrc
 echo "[ -e ~/.bashrc ] && source ~/.bashrc" >> /etc/profile
 groupadd docker
+#sudo usermod -aG docker $USER
 usermod -aG docker admin
 systemctl restart docker
 passwd admin
